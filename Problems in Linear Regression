@@ -1,0 +1,67 @@
+## 🔍 **Problems in Linear Regression**
+
+### 1. **Linearity Assumption**
+- Linear regression assumes a **linear relationship** between independent and dependent variables.
+- ❌ Doesn't work well if the actual relationship is nonlinear.
+- ✅ Fix: Use **polynomial regression** or **non-linear models**.
+
+---
+
+### 2. **Multicollinearity**
+- When independent variables are **highly correlated** with each other.
+- ➕ Causes instability in coefficient estimation.
+- 🧪 Detect with: **Variance Inflation Factor (VIF)**
+- ✅ Fix: Remove or combine correlated variables, or use **Ridge/Lasso regression**.
+
+---
+
+### 3. **Homoscedasticity**
+- Assumes **constant variance of residuals** across all levels of the independent variables.
+- ❌ If variance changes (heteroscedasticity), predictions and standard errors become unreliable.
+- 🧪 Detect with: Residual plots
+- ✅ Fix: Apply **log transformation**, or use **Weighted Least Squares**.
+
+---
+
+### 4. **Autocorrelation**
+- Residuals (errors) should be **independent** of each other.
+- ❌ Often violated in time series data.
+- 🧪 Detect with: **Durbin-Watson test**
+- ✅ Fix: Use **time series models** like ARIMA instead.
+
+---
+
+### 5. **Outliers**
+- Extreme values can **skew the regression line**.
+- ❌ High influence on slope and intercept.
+- ✅ Fix: Use **robust regression**, **remove/transform outliers**, or **use IQR/Z-score** methods.
+
+---
+
+### 6. **Non-normality of Errors**
+- Assumes that residuals (errors) follow a **normal distribution**, important for hypothesis testing.
+- ❌ Non-normality affects confidence intervals and p-values.
+- 🧪 Check with: **Q-Q plots**, **Shapiro-Wilk test**
+- ✅ Fix: Apply transformations or use **bootstrapping techniques**.
+
+---
+
+### 7. **Overfitting / Underfitting**
+- **Overfitting**: Model captures noise (too complex)
+- **Underfitting**: Model misses patterns (too simple)
+- ✅ Fix:
+  - Use **cross-validation**
+  - Try **Regularization (Ridge/Lasso)**
+  - Evaluate with **bias-variance tradeoff**
+
+---
+
+### 8. **Extrapolation Problem**
+- Predicting values **outside the range** of training data is risky and often inaccurate.
+- ✅ Tip: Stick to the range of your data unless you know the relationship holds.
+
+---
+
+### 9. **Omitted Variable Bias**
+- Leaving out important predictors leads to **biased and inconsistent estimates**.
+- ✅ Fix: Include all relevant variables, use **domain knowledge** or **feature selection techniques**.
